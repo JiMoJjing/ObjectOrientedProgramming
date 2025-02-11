@@ -1,9 +1,9 @@
 #pragma once
 #include "Firetruck.h"
 #include "Point.h"
+#include "INamedPerson.h"
 
-
-class FirefighterBase
+class FirefighterBase : public INamedPerson
 {
 public:
 	FirefighterBase(const std::string& name)
@@ -28,7 +28,7 @@ public:
 	}
 
 	// Getter / Setter.
-	const std::string GetName() const { return name; }
+	virtual std::string GetName() const override { return name; }
 	void SetName(const std::string& name) {	this->name = name; }
 
 protected:
